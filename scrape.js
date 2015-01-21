@@ -38,7 +38,7 @@ casper.on('remote.message', function(msg) {
     append(msg);
 })
 
-casper.wait(3000, function() {
+casper.then(function() {
     //this.mouse.click(400, 300);
    this.sendKeys('input[name="Email"]', username);
    this.sendKeys('input[name="Passwd"]',password);
@@ -48,7 +48,7 @@ casper.wait(3000, function() {
 
 for(var t=6000; t<3000*1000; t+=3000){
 
-    casper.wait(t,function(){
+    casper.then(function(){
             this.evaluate(function(){
                 for(var i=0; i<36; i++){
                     var tab = document.getElementById('r'+i);
